@@ -28,12 +28,12 @@ You can [download the files directly from GitHub](https://github.com/Ahmetaksung
 ```
 
 ```html
-<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aksfileupload@1.0.0/dist/aksFileUpload.min.css">
+<script src="https://unpkg.com/aksfileupload@1.0.0/dist/aksFileUpload.min.js"></script>
 ```
 ---
 
 ```html
-<script src="https://unpkg.com/aksfileupload@1.0.0/dist/aksFileUpload.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aksfileupload@1.0.0/dist/aksFileUpload.min.css">
 ```
 
 ```html
