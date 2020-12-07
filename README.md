@@ -42,6 +42,13 @@ You can [download the files directly from GitHub](https://github.com/Ahmetaksung
 <script src="https://cdn.jsdelivr.net/npm/aksfileupload@1.0.0/dist/aksFileUpload.min.js"></script>
 ```
 
+**jQuery**
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
+---
+
 **NPM**
 
 ```bash
