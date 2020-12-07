@@ -14,17 +14,29 @@ Compiled and production-ready code can be found in the `dist` directory.
 You can [download the files directly from GitHub](https://github.com/Ahmetaksungur/reading-time/archive/master.zip).
 
 ```html
+<link type="text/css" rel="stylesheet" href="dist/aksFileUpload.min.css">
+```
+
+```html
 <script src="dist/aksFileUpload.min.js"></script>
 ```
 
 **CDN**
 
 ```html
-<script src="https://unpkg.com/aks-reading-time@1.0.0/dist/readingTime.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/aksfileupload@1.0.0/dist/aksFileUpload.min.css">
 ```
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/aks-reading-time@1.0.0/dist/readingTime.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aksfileupload@1.0.0/dist/aksFileUpload.min.css">
+```
+
+```html
+<script src="https://unpkg.com/aksfileupload@1.0.0/dist/aksFileUpload.min.js"></script>
+```
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/aksfileupload@1.0.0/dist/aksFileUpload.min.js"></script>
 ```
 
 **NPM**
@@ -37,34 +49,19 @@ npm i aksfileupload
 ### 2. Initialize aksFileUpload.min.js
 
 ```html
-<div class="blog-content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus diam at nibh varius, a condimentum ante tristique. Integer ut tempor metus. Etiam fringilla auctor sapien ut fermentum.</p>
-  <p>Fusce porttitor sit amet nisi eu tincidunt. Donec volutpat nunc in tempor mollis. Donec vehicula dignissim nisl, eget porta purus vestibulum vel.</p>
-  <p>...</p>
-</div>
-<div class="result"></div>
+<aks-file-upload></aks-file-upload>
+<p id="uploadfile" type="json"></p>
 ```
 
 ```js
-const BlogReadingTime = new readingTime({
-  read: ".blog-content", // text container in which reading speed will be measured
-  result: ".result", // html element showing results
-  speed: 1 // the number of words read per second
-});
-```
-
-### Options and Settings
-
-```js
-const BlogReadingTime = new readingTime({
-  read: ".blog-content",
-  result: ".result",
-  speed: 1,
-  // other options
-  secondText: 'Sec Read', // default value "Sec Read"
-  minuteText: 'Min Read', // default value "Min Read"
-  hourText: 'Hour Read', // default value "Hour Read"
-  dayText: 'Day Read', // default value "Day Read"
+$(function () {
+  $("aks-file-upload").aksFileUpload({
+    fileUpload: "#uploadfile",
+    dragDrop: true,
+    maxSize: "90 GB",
+    multiple: true,
+    maxFile: 50
+  });
 });
 ```
 
