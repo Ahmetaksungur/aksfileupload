@@ -1,7 +1,7 @@
 # aksFileUpload.js
 File upload tool
 
-**[View the Demo on CodePen &rarr;](https://codepen.io/ahmetaksungur/pen/gOwMaGG)**
+**[View the Demo on CodePen &rarr;](https://codepen.io/collection/APgoJG)**
 
 ## Getting Started
 
