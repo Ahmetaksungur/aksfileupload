@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ahmetaksungur/reading-time.git"
+    "url": "git+https://github.com/Ahmetaksungur/aksfileupload.git"
   },
   "keywords": [
     "jquery file upload",
@@ -22,13 +22,12 @@
     "drag drop file upload",
     "browse",
     "image",
-    "preview"
   ],
   "author": {
   "name": "Ahmet Aksungur",
   "url": "http://ahmetaksungur.com"
 },
-"homepage": "https://github.com/Ahmetaksungur/reading-time#readme",
+"homepage": "https://github.com/Ahmetaksungur/aksfileupload#readme",
 "license": "MIT"
 
 }
