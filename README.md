@@ -1,7 +1,7 @@
-# aksFileUpload.min.js
+# aksFileUpload.js
 File upload tool
 
-**[View the Demo on CodePen &rarr;](https://codepen.io/ahmetaksungur/pen/oNxqNpx)**
+**[View the Demo on CodePen &rarr;](https://codepen.io/ahmetaksungur/pen/gOwMaGG)**
 
 ## Getting Started
 
@@ -47,7 +47,7 @@ npm i aksfileupload
 ```
 
 
-### 2. Initialize aksFileUpload.min.js
+## Document aksFileUpload.js
 
 ```html
 <aks-file-upload></aks-file-upload>
@@ -57,14 +57,81 @@ npm i aksfileupload
 ```js
 $(function () {
   $("aks-file-upload").aksFileUpload({
-    fileUpload: "#uploadfile",
-    dragDrop: true,
-    maxSize: "90 GB",
-    multiple: true,
-    maxFile: 50
+    fileUpload: "#uploadfile", // With target [input]file or [type]json you can save the data of loaded items
+    fileType: ["pdf", "docx", "rtf", "jpg", "jpeg", "png"] // allowed file formats
+    dragDrop: true, // drag & drop upload
+    maxSize: "90 GB", // maximum uploaded file size
+    multiple: true, // multiple file upload
+    maxFile: 50, // maximum number of uploaded files
+    maxFileError: "File exceeds upload limit. - Max limit:", // error text
+    maxSizeError: "File exceeds size. - Max limit:", // error text
+    fileTypeError: "Disallowed file format.", // error text
+    label: "Drag & Drop your files or Browse" // label text
   });
 });
 ```
+
+### Ajax Upload
+
+```html
+<aks-file-upload></aks-file-upload>
+<p id="uploadfile" type="json"></p>
+```
+
+```js
+$(function () {
+  $("aks-file-upload").aksFileUpload({
+    fileUpload: "#uploadfile", // With target [input]file or [type]json you can save the data of loaded items
+    fileType: ["pdf", "docx", "rtf", "jpg", "jpeg", "png"] // allowed file formats
+    dragDrop: true, // drag & drop upload
+    maxSize: "90 GB", // maximum uploaded file size
+    multiple: true, // multiple file upload
+    maxFile: 50, // maximum number of uploaded files
+    // ajax file upload
+    ajaxUpload: true, 
+          ajax: {
+            directlyLoad: false,  // direct loading file permit
+            url: "upload.php",
+            type: "POST",
+            contentType: false, 
+            processData: false,  
+            cache: false,
+            async: true,
+            enctype: "multipart/form-data"
+          },
+
+
+  });
+});
+```
+##### upload.php
+```php
+<?php
+
+if(isset($_FILES['file']['name'])){
+
+   /* Getting file name */
+   $filename = $_FILES['file']['name'];
+
+   /* Location */
+   $location = "upload/".$filename;
+   $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
+   $imageFileType = strtolower($imageFileType);
+
+   $response = 0;
+      /* Upload file */
+      if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
+         $response = $location;
+      }
+   echo $response;
+   exit;
+}
+
+echo 0;
+```
+
+
+
 
 ## License
 
