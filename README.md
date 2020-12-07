@@ -58,7 +58,7 @@ npm i aksfileupload
 $(function () {
   $("#aks-file-upload").aksFileUpload({
     fileUpload: "#uploadfile", // With target [input]file or [type]json you can save the data of loaded items
-    fileType: ["pdf", "docx", "rtf", "jpg", "jpeg", "png"] // allowed file formats
+    fileType: ["pdf", "docx", "rtf", "jpg", "jpeg", "png"], // allowed file formats
     dragDrop: true, // drag & drop upload
     maxSize: "90 GB", // maximum uploaded file size
     multiple: true, // multiple file upload
