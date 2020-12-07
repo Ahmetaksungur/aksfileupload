@@ -11,7 +11,7 @@ Compiled and production-ready code can be found in the `dist` directory.
 
 **Direct Download**
 
-You can [download the files directly from GitHub](https://github.com/Ahmetaksungur/reading-time/archive/master.zip).
+You can [download the files directly from GitHub](https://github.com/Ahmetaksungur/aksfileupload/archive/master.zip).
 
 ```html
 <link type="text/css" rel="stylesheet" href="dist/aksFileUpload.min.css">
@@ -67,4 +67,4 @@ $(function () {
 
 ## License
 
-The code is available under the [MIT License](https://github.com/Ahmetaksungur/reading-time/blob/master/LICENSE).
+The code is available under the [MIT License](https://github.com/Ahmetaksungur/aksfileupload/blob/master/LICENSE).
