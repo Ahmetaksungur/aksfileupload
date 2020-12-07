@@ -1,0 +1,333 @@
+  /*!
+ * aksfileupload v1.0.0
+ * File upload tool
+ * (c) 2020 Ahmet Aksungur
+ * MIT License
+ * https://github.com/Ahmetaksungur
+ */
+@font-face {
+    font-family: Gilroy-Medium;
+    src: url(https://unpkg.com/aks-fonts@1.0.0/Gilroy/Gilroy-Medium.ttf);
+  }
+  .aks-file-upload {
+    width: auto;
+    background: #ffffff;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    font-size: 16px;
+    line-height: normal;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0px 47px #00000012;
+    box-shadow: 0 0px 47px #00000012;
+    position: relative;
+    z-index: 1;
+    border: 2px white dashed;
+  }
+  
+  .aks-file-upload.drop-active {
+    border: 2px #0072ff dashed;
+  }
+  
+  .aks-file-upload-content {
+    width: auto;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .aks-file-upload-label {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: #002c7b;
+    padding: 15px;
+  }
+  .aks-file-upload-preview {
+    width: 100%;
+    height: auto;
+    position: relative;
+    -webkit-transition: all 350ms ease-in-out;
+    -o-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .aks-file-upload-preview:last-child {
+    margin-bottom: 0rem;
+  }
+  
+  .aks-file-upload-p-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  
+    position: absolute;
+    padding: 4px;
+    left: 0;
+    right: 0;
+    top: 0;
+    line-height: normal;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#0e0e0e),
+      to(#00000003)
+    );
+    background: -o-linear-gradient(#0e0e0e, #00000003);
+    background: linear-gradient(#0e0e0e, #00000003);
+    color: white;
+    z-index: 1;
+  }
+  .aks-file-upload-p-header-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding-left: 7px;
+    padding-top: 5px;
+    padding-right: 10px;
+    width: 70%;
+  }
+  .aks-file-upload-title {
+    font-size: 13px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    overflow: hidden;
+    word-wrap: break-word;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    width: 100%;
+  }
+  .aks-file-upload-size {
+    font-size: 10px;
+    color: #c3c3c3;
+  }
+  .aks-file-upload-delete {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 9999px;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    transition: -webkit-box-shadow 0.25s ease-in;
+    -o-transition: box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in, -webkit-box-shadow 0.25s ease-in;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+  }
+  .aks-file-upload-delete:hover {
+    -webkit-box-shadow: 0 0 0 0.125em hsla(0, 0%, 100%, 0.9);
+    box-shadow: 0 0 0 0.125em hsla(0, 0%, 100%, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .aks-file-upload-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 9999px;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    transition: -webkit-box-shadow 0.25s ease-in;
+    -o-transition: box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in, -webkit-box-shadow 0.25s ease-in;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    color: white;
+  }
+  .aks-file-upload-btn:hover {
+    -webkit-box-shadow: 0 0 0 0.125em hsla(0, 0%, 100%, 0.9);
+    box-shadow: 0 0 0 0.125em hsla(0, 0%, 100%, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .aks-file-upload-p-main {
+    background: #0e0e0e;
+    position: relative;
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 350ms ease-in-out;
+    -o-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+  }
+  .aks-file-upload-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: all 350ms ease-in-out;
+    -o-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+  }
+  .aks-file-upload-image img {
+    width: 100%;
+    height: 0px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    position: relative;
+  }
+  .aks-file-upload-image img.png {
+    background: url("background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .aks-file-upload-preview.aks-no-preview {
+    background: #171717;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .aks-file-upload-preview.aks-no-preview .aks-file-upload-p-header {
+    position: relative;
+    width: 100%;
+    background: transparent;
+  }
+  .aks-file-upload-preview.aks-no-preview .aks-file-upload-p-header-content {
+    padding-top: 0;
+  }
+  .aks-file-upload-preview.aks-no-preview .aks-file-upload-delete {
+    background-color: rgb(74 74 74 / 50%);
+  }
+  .aks-file-upload-p-header-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 350ms ease;
+    -o-transition: all 350ms ease;
+    transition: all 350ms ease;
+    position: relative;
+  }
+  .aks-file-upload-p-header-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .aks-file-upload-error {
+    color: red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  
+  .aks-uplaod-bar {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 5px;
+    background: #00ab3c;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    -webkit-transition: all 350ms ease-in;
+    -o-transition: all 350ms ease-in;
+    transition: all 350ms ease-in;
+    z-index: 5;
+  }
+  

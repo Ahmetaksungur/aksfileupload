@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>aksFileUpload - File upload tool"</title>   
+<link type="text/css" rel="stylesheet" href="dist/aksFileUpload.min.css">
+<style>
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 1em;
+}
+body {
+  background: aliceblue;
+  color: #4c4e53;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 0.875em;
+  font-family: Gilroy-Medium;
+}
+aks-file-upload {
+  width: 310px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+#uploadfile{
+    width: 80%;
+    margin: 0 auto;
+    color: #002c7b;
+    line-height:1.5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+</style>
+</head>
+<body>
+
+<aks-file-upload></aks-file-upload>
+<p id="uploadfile" type="json"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="dist/aksFileUpload.min.js"></script>
+<script>
+$(function () {
+  $("aks-file-upload").aksFileUpload({
+    fileUpload: "#uploadfile",
+    dragDrop: true,
+    maxSize: "90 GB",
+    multiple: true,
+    maxFile: 50
+  });
+});
+</script>
+
+</body>
+</html>

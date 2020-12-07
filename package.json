@@ -1,0 +1,34 @@
+{
+  "name": "aksfileupload",
+  "version": "1.0.0",
+  "description": "File upload tool",
+  "main": "dist/aksFileUpload.min.js",
+  "browser": "dist/aksFileUpload.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmetaksungur/reading-time.git"
+  },
+  "keywords": [
+    "jquery file upload",
+    "file upload",
+    "javascript",
+    "file",
+    "upload",
+    "drag",
+    "drop",
+    "drag drop file upload",
+    "browse",
+    "image",
+    "preview"
+  ],
+  "author": {
+  "name": "Ahmet Aksungur",
+  "url": "http://ahmetaksungur.com"
+},
+"homepage": "https://github.com/Ahmetaksungur/reading-time#readme",
+"license": "MIT"
+
+}
