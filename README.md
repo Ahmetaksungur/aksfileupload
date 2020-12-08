@@ -13,7 +13,7 @@ Compiled and production-ready code can be found in the `dist` directory.
 
 **Direct Download**
 
-You can [download the files directly from GitHub](https://github.com/Ahmetaksungur/aksfileupload/archive/master.zip).
+You can [download the files directly from GitHub](https://github.com/Ahmetaksungur/aksfileupload/archive/main.zip).
 
 ```html
 <link type="text/css" rel="stylesheet" href="dist/aksFileUpload.min.css">
