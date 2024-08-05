@@ -550,7 +550,14 @@
             ev.stopPropagation();
             if (ev.originalEvent.dataTransfer) {
               if (ev.originalEvent.dataTransfer.files.length) {
-                var droppedFiles = ev.originalEvent.dataTransfer.files;
+
+                
+      //d&d file upload fix
+   
+            $(settings.input)[0].files = droppedFiles;
+    //d&d file upload fix
+
+                
                 for (var i = 0; i < droppedFiles.length; i++) {
                   file(droppedFiles[i]);
                 }
