@@ -75,7 +75,8 @@ $(function () {
     maxFileError: "File exceeds upload limit. - Max limit:", // error text
     maxSizeError: "File exceeds size. - Max limit:", // error text
     fileTypeError: "Disallowed file format.", // error text
-    label: "Drag & Drop your files or Browse" // label text
+    label: "Drag & Drop your files or Browse", // label text
+    defaultImage: "path/to/image.jpg" // optional default image to preview on load
   });
 });
 ```
